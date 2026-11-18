@@ -9,7 +9,8 @@ DB_PATH = "_bancoDeDados\estoque\estoque.db"
 def rota_ola():
     dados = request.get_json()
     nome = dados.get("nome", "")
-    return f"Olá {nome}"
+    local = dados.get("endereco", "")
+    return f"Olá {nome}, vc mora em {local}"
 
 @app.route("/api/chat") # EXERCÍCIO 1
 def rota_chat():
